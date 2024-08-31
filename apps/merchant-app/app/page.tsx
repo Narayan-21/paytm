@@ -1,8 +1,10 @@
+"use client";
 
-export default function Home() {
-  return (
-    <div className="text-4xl">
-      Hi there from merchant app
-    </div>
-  );
+import { useBalance } from "@repo/store/balance";
+
+export default function() {
+  const balance = useBalance();
+  return <div>
+    hi there {balance}
+  </div>
 }
