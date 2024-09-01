@@ -29,7 +29,7 @@ export const AddMoney = () => {
                 key: x.name,
                 value: x.name
             }))} />
-            <div>
+            <div className="flex justify-center pt-4">
                 <Button onClick={() => {
                     window.location.href = redirect_url || "";
                 }}>Add Money</Button>
