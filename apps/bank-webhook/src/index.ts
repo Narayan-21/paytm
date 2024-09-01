@@ -3,8 +3,9 @@ import db from "@repo/db/client";
 
 const app = express();
 
-app.post("/bankWebhook", async function (req,res){
+app.use(express.json());
 
+app.post("/bankWebhook", async function (req,res){
     // Use webhook secret to check if the req really came from the bank
     const paymentInfo = {
         token: req.body.token,
