@@ -1,0 +1,6 @@
+name: "Build succeeds on PR"
+
+on:
+  pull_request:
+    branches:
+      - main

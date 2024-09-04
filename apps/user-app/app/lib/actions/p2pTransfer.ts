@@ -1,11 +1,21 @@
 "use server"
 
-import { getServerSession } from "next-auth"
+import { getServerSession, Session } from "next-auth"
 import { authOptions } from "../auth"
 import prisma from "@repo/db/client";
 
+interface ExtendedSession extends Session {
+    user?: {
+        name?: string | null;
+        email?: string | null;
+        image?: string | null;
+        id?: string;
+    }
+}
+
+
 export async function p2pTransfer(to: string, amount:number) {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession(authOptions) as ExtendedSession;
     const from = session?.user?.id;
     if (!from) {
         return {
