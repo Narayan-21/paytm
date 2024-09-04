@@ -19,7 +19,7 @@ export const AddMoney = () => {
     const [redirect_url, setRedirect_url] = useState(SUPPORTED_BANKS[0]?.redirectUrl);
     const [provider, setProvier] = useState(SUPPORTED_BANKS[0]?.name || "");
     const [value, setValue] = useState(0);
-
+    // Comment 
     return <Card title="Add money">
         <div className="w-full">
             <TextInput label={"Amount"} placeholder={"Amount"} onChange={(val) => {
